@@ -1,0 +1,103 @@
+/* src/pages/HomePage.css */
+
+.home-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.centered-logo {
+  width: 100%;
+  max-width: 1200px; /* Make the logo nice and big */
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  width: 100%;
+  max-width: 550px; /* Set a max-width for the form */
+}
+
+.form-container form {
+  display: flex;
+  gap: 15px; /* Space between textarea and button */
+}
+
+.form-container input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  height: 40px;     
+  line-height: 40px; 
+  padding: 0 20px;
+  background-color: #00000068;
+  
+  /* The 'resize' property is no longer needed for an input */
+}
+
+.form-container textarea:focus {
+  outline: none;
+}
+
+.form-container button {
+  background-color: #e50000; /* Red from your logo */
+  width: 10%;
+  color: white;
+  border: none;
+  font-size: .5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #c00000;
+}
+
+.form-container input::placeholder {
+  color: #48e0ff;
+  opacity: 1;
+}
+
+/* --- You can keep the :focus rule, just change it to target input --- */
+.form-container input:focus {
+  outline: none;
+  border-color: #e50000;
+}
+
+/* src/pages/HomePage.css */
+
+/* --- ADD THESE NEW STYLES AT THE BOTTOM --- */
+
+/* Styling for the success message container */
+.thank-you-message {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  color: #e43333;
+  margin-top: 20px;
+}
+
+.thank-you-message h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.thank-you-message p {
+  font-size: 1.2rem;
+}
+
+/* Styling for the error message */
+.error-message {
+  color: #b91c1c; /* Use your theme's red color */
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}

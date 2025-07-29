@@ -1,0 +1,57 @@
+/* src/App.css */
+
+/* --- Styles for the new Fixed Header --- */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 1000;
+
+  /* --- THIS IS THE KEY TO THE SMOOTH FADE --- */
+  /* Animate both the 'top' and 'opacity' properties over 0.3 seconds */
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* --- ADD THESE TWO NEW RULES --- */
+
+/* This is the style for when the navbar is visible (default state) */
+.fixed-header.visible {
+  top: 0;
+  opacity: 1;
+}
+
+/* This is the style for when the navbar is hidden */
+.fixed-header.hidden {
+  top: -100px; /* Moves the navbar completely off-screen upwards */
+  opacity: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adds space between the nav links */
+}
+
+.navigation a {
+  color: #c72121;
+  font-family: "Helvetica", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #ffffff;
+}
+
+/* --- IMPORTANT: This prevents page content from being hidden under the fixed header --- */
+.main-content-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; /* Adjust this value based on your header's height */
+}

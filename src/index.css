@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+
+  background-image: url('./assets/landingPageBG.JPG'); 
+  background-size: cover; 
+  background-position: bottom; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-color: #fcefee;
+  cursor: url('/gitar.png'), auto;
+  
+  color: #333;
+}
+
+a:hover,
+button:hover {
+  /* Set the cursor for interactive elements on hover */
+  cursor: url('/guitar-_link-select_.png') 11 13, pointer;
+}
+
+/* src/index.css */
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #ff7474;
+  background-color: #ffb700;
+} */

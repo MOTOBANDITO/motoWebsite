@@ -1,0 +1,84 @@
+/* src/pages/UnlockSongPage.css */
+
+.unlock-song-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 50px auto;
+  gap: 40px;
+  padding: 20px;
+}
+
+.song-artwork {
+  flex-basis: 40%;
+  max-width: 350px;
+}
+
+.song-artwork img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.song-details {
+  flex-basis: 60%;
+}
+
+.song-title {
+  font-family: Helvetica, sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color:aliceblue
+}
+.song-price{
+  font-family: Helvetica, sans-serif;
+}
+
+.song-description {
+  font-family: Helvetica, sans-serif;;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.song-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.buy-now-button {
+  background-color: #3ad2d2; /* Red color from your logo */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.buy-now-button:hover {
+  background-color: #c00000;
+}
+
+.buy-now-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .unlock-song-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

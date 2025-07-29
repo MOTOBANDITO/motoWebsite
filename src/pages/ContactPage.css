@@ -1,0 +1,40 @@
+/* src/pages/ContactPage.css - Fully Responsive Version */
+
+/* --- Default styles for desktop --- */
+.email-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Use min-height to ensure it fills the screen */
+  padding: 40px 20px; /* Reduced the huge padding for better balance */
+}
+
+.email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
+  border: 2px solid rgb(201, 60, 60);
+  border-radius: 200px;
+  padding: 15px 30px; /* Increased padding for a better look */
+  color: rgb(195, 22, 22);
+  font-size: 2rem; /* Set a base font size */
+  text-align: center; /* Ensures text is centered if it wraps */
+}
+
+
+/* --- Styles for mobile screens (600px or less) --- */
+@media (max-width: 600px) {
+
+  .email {
+    /* 1. Make the font size smaller so it's more likely to fit */
+    font-size: 1.1rem; 
+    
+    /* 2. Force the word to break if it still doesn't fit. This is the key! */
+    word-break: break-all; 
+
+    /* 3. Adjust padding for a better fit on small screens */
+    padding: 12px 20px;
+  }
+}

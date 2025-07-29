@@ -1,0 +1,36 @@
+/* src/pages/VideoPage.css */
+
+.video-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Space between the videos */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.video-page-title {
+  /* Optional: Style a title for the page */
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2.5rem;
+  color: #333; /* A dark color to contrast the pink background */
+  font-style: italic;
+}
+
+.video-wrapper {
+  /* This container controls the size of the video player */
+  width: 100%;
+  max-width: 854px; /* A standard 16:9 width */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Ensures the iframe corners are rounded */
+}
+
+.responsive-iframe {
+  /* This is the magic for making the iframe responsive */
+  aspect-ratio: 16 / 9; /* Sets the standard widescreen video aspect ratio */
+  width: 100%;
+  height: auto;
+  border: none; /* Removes the default border */
+}
