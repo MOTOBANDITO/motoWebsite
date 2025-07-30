@@ -44,6 +44,11 @@ function HomePage() {
   // If the form was submitted successfully, show a thank you message.
   if (status === 'success') {
     return (
+      <>
+  <title>MOTO BANDIT | Official Website</title>
+  <meta name="description" content="The official home of MOTO BANDIT. Listen to our music, shop official merchandise, watch videos, and get in touch." />
+  
+  {/* The rest of your homepage component... */}
       <div className="home-content-container">
         <img src={motoLogo} alt="MOTOBANDIT logo" className="centered-logo" />
         <div className="thank-you-message">
@@ -51,11 +56,17 @@ function HomePage() {
           <p>Your secret is safe with us.</p>
         </div>
       </div>
+      </>
     );
   }
 
   // Otherwise, show the form.
   return (
+    <>
+  <title>MOTO BANDIT | Official Website</title>
+  <meta name="description" content="The official home of MOTO BANDIT. Listen to our music, shop official merchandise, watch videos, and get in touch." />
+  
+  {/* The rest of your homepage component... */}
     <div className="home-content-container">
       <img src={motoLogo} alt="MOTOBANDIT logo" className="centered-logo" />
 
@@ -76,6 +87,7 @@ function HomePage() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 

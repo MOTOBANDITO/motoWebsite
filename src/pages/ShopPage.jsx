@@ -38,6 +38,13 @@ function ShopPage() {
 // ... (keep the top of the file the same) ...
 
   return (
+    <>
+      {/* --- THIS IS THE NEW REACT 19 SEO METHOD --- */}
+      {/* Add your title and meta tags directly here */}
+      <title>Shop Official Merch - MOTO BANDIT</title>
+      <meta name="description" content="Official t-shirts, music, and more from MOTO BANDIT. Support the band directly from our store." />
+      
+      {/* --- The rest of your page component --- */}
     <div className='shop-page'>
       <div className="product-grid">
         {products.map((product) => (
@@ -64,6 +71,7 @@ function ShopPage() {
         <img src={philip} alt="Side graphic" />
       </div>
     </div>
+    </>
   );
 }
 

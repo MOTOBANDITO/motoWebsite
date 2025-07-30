@@ -61,6 +61,11 @@ export const UnlockSongPage = () => {
   }
 
   return (
+    <>
+  <title>Unlock Exclusive Demo - MOTO BANDIT</title>
+  <meta name="description" content="Get access to an exclusive, unreleased demo from MOTO BANDIT. Download the track directly from the band." />
+
+  {/* The rest of your unlock song page component... */}
     <div className="unlock-song-container">
       <div className="song-artwork">
         <img src={product.images[0].src} alt={product.title} />
@@ -78,5 +83,6 @@ export const UnlockSongPage = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };

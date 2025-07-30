@@ -9,6 +9,11 @@ export const VideoPage = () => {
   const videoId2 = 'MUCQ69j21xk?si=RNFN0s74ey_lN_gy';
 
   return (
+    <>
+  <title>Music Videos - MOTO BANDIT</title>
+  <meta name="description" content="Watch all the official music videos from MOTO BANDIT. The complete video collection in one place." />
+
+  {/* The rest of your video page component... */}
     <div className="video-page-container">
 
       {/* --- First Video --- */}
@@ -35,5 +40,6 @@ export const VideoPage = () => {
         ></iframe>
       </div>
     </div>
+    </>
   );
 }

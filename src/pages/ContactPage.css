@@ -1,40 +1,66 @@
-/* src/pages/ContactPage.css - Fully Responsive Version */
+/* src/pages/ContactPage.css */
 
-/* --- Default styles for desktop --- */
 .email-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh; /* Use min-height to ensure it fills the screen */
-  padding: 40px 20px; /* Reduced the huge padding for better balance */
+  min-height: 60vh;
+  padding: 20px 20px;
 }
 
-.email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* --- The Main Button Styling --- */
+.email-button {
   font-family: Helvetica, sans-serif;
-  border: 2px solid rgb(201, 60, 60);
+  font-size: 1.5rem; /* Make the email a bit bigger */
+  font-weight: bold;
+  
+  /* Default state (matches your old design) */
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  
+  /* General button styles */
   border-radius: 200px;
-  padding: 15px 30px; /* Increased padding for a better look */
-  color: rgb(195, 22, 22);
-  font-size: 2rem; /* Set a base font size */
-  text-align: center; /* Ensures text is centered if it wraps */
+  padding: 15px 30px;
+  cursor: pointer; /* Change cursor to a pointer on hover */
+  
+  /* --- The key to the smooth hover effect --- */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* --- The Hover State --- */
+.email-button:hover {
+  background-color: rgb(1, 0, 61); /* Red background */
+  color: white; /* White text */
+   border: 2px solid rgb(1, 1, 33);
+}
 
-/* --- Styles for mobile screens (600px or less) --- */
+/* --- The small text that appears below --- */
+.copy-prompt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-top: 15px;
+  
+  /* This prevents the layout from shifting when the text appears */
+  height: 20px; 
+  
+  /* --- The key to the fade-in effect --- */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+/* This class is added by React to make the text visible */
+.copy-prompt.visible {
+  opacity: 1; /* Fades in */
+}
+
+/* Responsive styles for mobile */
 @media (max-width: 600px) {
-
-  .email {
-    /* 1. Make the font size smaller so it's more likely to fit */
-    font-size: 1.1rem; 
-    
-    /* 2. Force the word to break if it still doesn't fit. This is the key! */
-    word-break: break-all; 
-
-    /* 3. Adjust padding for a better fit on small screens */
+  .email-button {
+    font-size: 1rem;
+    word-break: break-all;
     padding: 12px 20px;
   }
 }
