@@ -2,11 +2,14 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { sitemap } from 'vite-plugin-sitemap'; // <-- Import the plugin
 
-// https://vite.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [react(),
-    sitemap({ hostname: 'https://motobandit.net',
+  plugins: [
+    react(),
+    // --- Update the sitemap configuration to be more explicit ---
+    sitemap({
+      hostname: 'https://motobandit.net',
+      // This explicitly tells the plugin about all the pages on your site.
       dynamicRoutes: [
         '/',          // Your homepage
         '/shop',      // Your shop page
@@ -15,6 +18,6 @@ export default defineConfig({
         '/unlock',    // Your unlock song page
         '/contact',   // Your contact page
       ],
-    })
+    }),
   ],
-})
+});
