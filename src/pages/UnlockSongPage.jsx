@@ -62,7 +62,7 @@ export const UnlockSongPage = () => {
 
   return (
     <>
-  <title>Unlock Exclusive Demo - MOTO BANDIT</title>
+  <title>MOTO BANDIT | Unlock Exclusive Demo</title>
   <meta name="description" content="Get access to an exclusive, unreleased demo from MOTO BANDIT. Download the track directly from the band." />
 
   {/* The rest of your unlock song page component... */}

@@ -10,7 +10,7 @@ export const VideoPage = () => {
 
   return (
     <>
-  <title>Music Videos - MOTO BANDIT</title>
+  <title>MOTO BANDIT | Music Videos</title>
   <meta name="description" content="Watch all the official music videos from MOTO BANDIT. The complete video collection in one place." />
 
   {/* The rest of your video page component... */}

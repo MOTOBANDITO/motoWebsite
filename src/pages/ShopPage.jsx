@@ -41,7 +41,7 @@ function ShopPage() {
     <>
       {/* --- THIS IS THE NEW REACT 19 SEO METHOD --- */}
       {/* Add your title and meta tags directly here */}
-      <title>Shop Official Merch - MOTO BANDIT</title>
+      <title>MOTO BANDIT | Shop Official Merch </title>
       <meta name="description" content="Official t-shirts, music, and more from MOTO BANDIT. Support the band directly from our store." />
       
       {/* --- The rest of your page component --- */}

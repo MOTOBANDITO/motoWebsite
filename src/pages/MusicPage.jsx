@@ -5,7 +5,7 @@ import './MusicPage.css'; // Import our styles
 export const MusicPage = () => {
   return (
     <>
-  <title>Music & Discography - MOTO BANDIT</title>
+  <title>MOTO BANDIT | Music & Discography </title>
   <meta name="description" content="Explore the complete discography of MOTO BANDIT. Stream all our official releases, including Twin Flame, Pile of Garbage, Guzzler EP, and more." />
 
   {/* The rest of your music page component... */}

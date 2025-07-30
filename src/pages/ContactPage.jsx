@@ -25,7 +25,7 @@ export const ContactPage = () => {
 
   return (
     <>
-      <title>Contact MOTO BANDIT</title>
+      <title>MOTO BANDIT | Contact</title>
       <meta name="description" content="Get in touch with MOTO BANDIT. For booking, press, or other inquiries, find our contact information here." />
       
       <div className="email-container">
