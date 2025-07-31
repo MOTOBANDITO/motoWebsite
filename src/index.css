@@ -20,12 +20,13 @@ button:hover {
   cursor: url('/guitar-_link-select_.png') 11 13, pointer;
 }
 
-/* src/index.css */
-
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: #ff7474;
-  background-color: #ffb700;
-} */
+/* This targets screens 768px wide or smaller (most phones and tablets) */
+@media (max-width: 768px) {
+  html, body {
+    /*
+      On mobile, switch to a normal scrolling background.
+      This prevents the "zoom and blur" issue.
+    */
+    background-attachment: fixed;
+  }
+}

@@ -55,3 +55,22 @@
   align-items: center;
   padding-top: 80px; /* Adjust this value based on your header's height */
 }
+
+@media (max-width: 600px) {
+
+  /* Target the main navigation container */
+  .navigation {
+    /* Reduce the space between the nav links */
+    gap: 10px;
+  }
+
+  /* Target the individual links */
+  .navigation a {
+    /* Make the font size smaller to save space */
+    font-size: 0.8rem;
+    
+    /* Optional: Add a little padding for easier tapping */
+    padding: 5px; 
+  }
+
+}
