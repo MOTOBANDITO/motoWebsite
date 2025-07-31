@@ -7,7 +7,7 @@ body::before {
   height: 100vh;                 /* Ensure full height */
   z-index: -1;                   /* Send it behind everything */
   
-  background-image: url('./assets/landingPageBG.JPG');
+  background-image: url('./assets/landingPageBG.webp');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;

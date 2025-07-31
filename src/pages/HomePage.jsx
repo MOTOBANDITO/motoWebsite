@@ -1,7 +1,7 @@
 // src/pages/HomePage.jsx
 
 import React, { useState } from 'react';
-import motoLogo from '../assets/motologoRedBlur.png';
+import motoLogo from '../assets/motologoRedBlur.webp';
 import './HomePage.css';
 
 function HomePage() {
