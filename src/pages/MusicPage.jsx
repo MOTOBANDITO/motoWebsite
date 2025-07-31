@@ -15,7 +15,7 @@ export const MusicPage = () => {
       <div className="album-grid">
         {releases.map((release) => (
           <div key={release.id} className="album-card">
-            <img src={release.image} alt={release.title} className="album-art" />
+            <img src={release.image} alt={release.title} loading="lazy" width="300" height="300" className="album-art" />
             <h2 className="album-title">{release.title}</h2>
             <p className="album-year">{release.year}</p>
             <div className="album-links">
