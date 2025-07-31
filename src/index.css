@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 
   background-image: url('./assets/landingPageBG.JPG'); 
   background-size: cover; 
@@ -10,6 +10,7 @@ body {
   background-attachment: fixed; 
   background-color: #fcefee;
   cursor: url('/gitar.png'), auto;
+  height: 100vh;
   
   color: #333;
 }
@@ -18,15 +19,4 @@ a:hover,
 button:hover {
   /* Set the cursor for interactive elements on hover */
   cursor: url('/guitar-_link-select_.png') 11 13, pointer;
-}
-
-/* This targets screens 768px wide or smaller (most phones and tablets) */
-@media (max-width: 768px) {
-  html, body {
-    /*
-      On mobile, switch to a normal scrolling background.
-      This prevents the "zoom and blur" issue.
-    */
-    background-attachment: fixed;
-  }
 }
