@@ -27,7 +27,7 @@ body::before {
      or import it if it's in src/assets */
   background-image: url("/src/assets/aboutBG.jpg");
   background-size: cover;
-  background-position: center 70% 40%;
+  background-position: 46% 0%;
   background-repeat: no-repeat;
 
   /* This makes the site clickable */
