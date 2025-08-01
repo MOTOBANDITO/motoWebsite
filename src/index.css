@@ -1,12 +1,13 @@
 /* src/index.css */
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Courier New', Courier, monospace;
-  
+  font-family: "Courier New", Courier, monospace;
+
   /* --- MOVE THE DEFAULT CURSOR HERE --- */
-  cursor: url('/gitar.png'), auto;
+  cursor: url("/gitar.png"), auto;
 }
 
 /* 
@@ -21,12 +22,12 @@ body::before {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  
+
   /* Make sure this path is correct relative to your public folder if it lives there,
      or import it if it's in src/assets */
-  background-image: url('/src/assets/landingPageBG.webp');
+  background-image: url("/src/assets/landingPageBG.webp");
   background-size: cover;
-  background-position: bottom;
+  background-position: center 40%;
   background-repeat: no-repeat;
 
   /* This makes the site clickable */
@@ -35,5 +36,13 @@ body::before {
 a:hover,
 button:hover {
   /* Set the cursor for interactive elements on hover */
-  cursor: url('/guitar-_link-select_.png') 11 13, pointer;
+  cursor: url("/guitar-_link-select_.png") 11 13, pointer;
+}
+
+body.about-page-active::before {
+  background-image: url("./assets/aboutBG.jpg");
+}
+
+body.contact-page-active::before {
+  background-image: url("./assets/aboutBG.jpg");
 }

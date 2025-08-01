@@ -1,0 +1,33 @@
+/* src/pages/AboutPage.css - New Centered Vertical Layout */
+
+.about-page-container {
+  max-width: 800px; /* Adjust this to control the max width of your content */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+/* --- Styling for the text --- */
+.about-text {
+  max-width: 400px;
+}
+
+.about-text p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 2;
+  color: rgb(255, 234, 0);
+  padding: 20px;
+  background-color: rgba(14, 1, 1, 0.605);
+  margin: 0;
+}
+
+/* --- Responsive styles for mobile --- */
+/* We can use a media query to adjust font size for better readability */
+@media (max-width: 600px) {
+  .about-text p {
+    font-size: 1.1rem;
+  }
+}

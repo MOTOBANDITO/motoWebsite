@@ -11,6 +11,7 @@ import { ContactPage } from './pages/ContactPage.jsx';
 import { UnlockSongPage } from './pages/UnlockSongPage.jsx';
 import { VideoPage } from './pages/VideoPage.jsx';
 import { MusicPage } from './pages/MusicPage.jsx';
+import { AboutPage } from './pages/AboutPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "videos",
         element: <VideoPage/>
+      },
+      { 
+        path: "about", 
+        element: <AboutPage/> 
       },
       {
         path: "unlock",

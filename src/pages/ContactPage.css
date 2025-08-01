@@ -14,26 +14,25 @@
   font-family: Helvetica, sans-serif;
   font-size: 1.5rem; /* Make the email a bit bigger */
   font-weight: bold;
-  
+
   /* Default state (matches your old design) */
   background-color: transparent;
   color: rgb(255, 255, 255);
   border: 2px solid rgb(255, 255, 255);
-  
+
   /* General button styles */
   border-radius: 200px;
   padding: 15px 30px;
   cursor: pointer; /* Change cursor to a pointer on hover */
-  
+
   /* --- The key to the smooth hover effect --- */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- The Hover State --- */
 .email-button:hover {
-  background-color: rgb(1, 0, 61); /* Red background */
-  color: white; /* White text */
-   border: 2px solid rgb(1, 1, 33);
+  background-color: rgb(255, 255, 255); /* Red background */
+  color: rgb(0, 0, 0); /* White text */
 }
 
 /* --- The small text that appears below --- */
@@ -42,10 +41,10 @@
   font-size: 0.9rem;
   color: #ffffff;
   margin-top: 15px;
-  
+
   /* This prevents the layout from shifting when the text appears */
-  height: 20px; 
-  
+  height: 20px;
+
   /* --- The key to the fade-in effect --- */
   opacity: 0; /* Hidden by default */
   transition: opacity 0.3s ease;

@@ -57,7 +57,6 @@
 }
 
 @media (max-width: 600px) {
-
   /* Target the main navigation container */
   .navigation {
     /* Reduce the space between the nav links */
@@ -68,9 +67,28 @@
   .navigation a {
     /* Make the font size smaller to save space */
     font-size: 0.8rem;
-    
-    /* Optional: Add a little padding for easier tapping */
-    padding: 5px; 
-  }
 
+    /* Optional: Add a little padding for easier tapping */
+    padding: 5px;
+  }
+}
+
+/* --- Style for the navigation on the About Page --- */
+.fixed-header.header-about-theme .navigation a {
+  color: rgb(255, 247, 0); /* Your desired color for the About page */
+}
+
+/* Hover state for the About page */
+.fixed-header.header-about-theme .navigation a:hover {
+  color: #ffffff; /* Your desired hover color */
+}
+
+/* --- Style for the navigation on the Contact Page --- */
+.fixed-header.header-contact-theme .navigation a {
+  color: rgb(255, 247, 0); /* Your desired color for the Contact page */
+}
+
+/* Hover state for the Contact page */
+.fixed-header.header-contact-theme .navigation a:hover {
+  color: #ffffff; /* Your desired hover color */
 }
