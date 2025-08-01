@@ -1,19 +1,36 @@
+/* src/index.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  
+  /* --- MOVE THE DEFAULT CURSOR HERE --- */
+  cursor: url('/gitar.png'), auto;
+}
+
+/* 
+  Your excellent pseudo-element background. 
+  This is the correct place for it.
+*/
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;                  /* Ensure full width */
-  height: 100vh;                 /* Ensure full height */
-  z-index: -1;                   /* Send it behind everything */
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
   
-  background-image: url('./assets/landingPageBG.webp');
+  /* Make sure this path is correct relative to your public folder if it lives there,
+     or import it if it's in src/assets */
+  background-image: url('/src/assets/landingPageBG.webp');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  background-color: #fcefee;
 
-  pointer-events: none;          /* Don't block clicks */
+  /* This makes the site clickable */
+  pointer-events: none;
 }
 a:hover,
 button:hover {
