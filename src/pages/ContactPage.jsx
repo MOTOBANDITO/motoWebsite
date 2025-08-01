@@ -5,7 +5,6 @@ import "./ContactPage.css";
 import useBodyClass from "../hooks/useBodyClass";
 
 export const ContactPage = () => {
-  useBodyClass("contact-page-active");
   // State to track if the mouse is over the button
   const [isHovered, setIsHovered] = useState(false);
   // State to manage the text in the prompt below the button

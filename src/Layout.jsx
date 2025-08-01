@@ -61,7 +61,7 @@ function Layout() {
           <Link to="/shop">shop</Link>
           <Link to="/music">music</Link>
           <Link to="/videos">videos</Link>
-          <Link to="/about">about</Link>
+          {/* <Link to="/about">about</Link> */}
           {/* <Link to="/unlock">[unlock song]</Link> */}
           <Link to="/contact">contact</Link>
         </nav>

@@ -25,9 +25,9 @@ body::before {
 
   /* Make sure this path is correct relative to your public folder if it lives there,
      or import it if it's in src/assets */
-  background-image: url("/src/assets/landingPageBG.webp");
+  background-image: url("/src/assets/aboutBG.jpg");
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 70% 40%;
   background-repeat: no-repeat;
 
   /* This makes the site clickable */
@@ -37,12 +37,4 @@ a:hover,
 button:hover {
   /* Set the cursor for interactive elements on hover */
   cursor: url("/guitar-_link-select_.png") 11 13, pointer;
-}
-
-body.about-page-active::before {
-  background-image: url("./assets/aboutBG.jpg");
-}
-
-body.contact-page-active::before {
-  background-image: url("./assets/aboutBG.jpg");
 }

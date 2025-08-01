@@ -10,15 +10,15 @@
 
 .centered-logo {
   width: 100%;
-  max-width: 1200px; /* Make the logo nice and big */
+  max-width: 1000px; /* Make the logo nice and big */
   height: auto;
   margin-bottom: 50px;
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   width: 100%;
   max-width: 550px; /* Set a max-width for the form */
@@ -35,11 +35,11 @@
   font-family: Helvetica, sans-serif;
   font-size: 1.1rem;
   color: #ffffff;
-  height: 40px;     
-  line-height: 40px; 
+  height: 40px;
+  line-height: 40px;
   padding: 0 20px;
   background-color: #00000068;
-  
+
   /* The 'resize' property is no longer needed for an input */
 }
 
@@ -52,7 +52,7 @@
   width: 10%;
   color: white;
   border: none;
-  font-size: .5rem;
+  font-size: 0.5rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -63,7 +63,7 @@
 }
 
 .form-container input::placeholder {
-  color: #48e0ff;
+  color: #48ff9a;
   opacity: 1;
 }
 
@@ -99,5 +99,5 @@
   color: #b91c1c; /* Use your theme's red color */
   text-align: center;
   margin-top: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }

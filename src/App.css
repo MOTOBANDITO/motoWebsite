@@ -36,7 +36,7 @@
 }
 
 .navigation a {
-  color: #00133a;
+  color: #ffffff;
   font-family: "Helvetica", sans-serif;
   font-size: 1.1rem;
   font-weight: bold;
@@ -45,7 +45,7 @@
 }
 
 .navigation a:hover {
-  color: #ffffff;
+  color: #ff3636;
 }
 
 /* --- IMPORTANT: This prevents page content from being hidden under the fixed header --- */
@@ -71,24 +71,4 @@
     /* Optional: Add a little padding for easier tapping */
     padding: 5px;
   }
-}
-
-/* --- Style for the navigation on the About Page --- */
-.fixed-header.header-about-theme .navigation a {
-  color: rgb(255, 247, 0); /* Your desired color for the About page */
-}
-
-/* Hover state for the About page */
-.fixed-header.header-about-theme .navigation a:hover {
-  color: #ffffff; /* Your desired hover color */
-}
-
-/* --- Style for the navigation on the Contact Page --- */
-.fixed-header.header-contact-theme .navigation a {
-  color: rgb(255, 247, 0); /* Your desired color for the Contact page */
-}
-
-/* Hover state for the Contact page */
-.fixed-header.header-contact-theme .navigation a:hover {
-  color: #ffffff; /* Your desired hover color */
 }

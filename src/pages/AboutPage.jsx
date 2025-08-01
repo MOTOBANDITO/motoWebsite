@@ -5,7 +5,6 @@ import "./AboutPage.css";
 import useBodyClass from "../hooks/useBodyClass";
 
 export const AboutPage = () => {
-  useBodyClass("about-page-active");
   return (
     <>
       <title>About - MOTO BANDIT</title>
