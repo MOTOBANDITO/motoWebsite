@@ -1,37 +1,44 @@
-/* src/pages/HomePage.css */
+/* src/pages/HomePage.css - Vertical Layout with Width Control */
 
+/* --- 1. Main Page Container --- */
 .home-content-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 100px 20px;
+  box-sizing: border-box;
 }
 
 .centered-logo {
+  padding-right: 24px;
   width: 100%;
-  max-width: 1000px; /* Make the logo nice and big */
+  max-width: 1000px;
   height: auto;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
-.form-container {
+/* --- 2. Form Layout (Vertically Stacked) --- */
+
+/* The wrapper now just controls the overall width and centers its children. */
+.input-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column; /* This ensures a vertical stack */
+  align-items: center; /* This centers the items horizontally */
+  gap: 15px; /* This is the space between the input and the button */
 
+  /* --- THIS IS HOW YOU CONTROL THE OVERALL FORM WIDTH --- */
+  /* To make the form wider or narrower, change this value. */
   width: 100%;
-  max-width: 550px; /* Set a max-width for the form */
 }
 
-.form-container form {
-  display: flex;
-  gap: 15px; /* Space between textarea and button */
-}
+/* This targets the input field itself */
+.input-wrapper input {
+  /* --- THIS IS HOW YOU CONTROL THE INPUT BOX WIDTH --- */
+  /* '100%' makes the input box fill the width of its parent (.input-wrapper) */
+  width: 700px;
 
-.form-container input {
-  width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Important for padding */
   font-family: Helvetica, sans-serif;
   font-size: 1.1rem;
   color: #ffffff;
@@ -39,65 +46,107 @@
   line-height: 40px;
   padding: 0 20px;
   background-color: #00000068;
-
-  /* The 'resize' property is no longer needed for an input */
+  border-style: solid;
+  border-width: 2px;
+  border-color: #232751ab #bba7c0b1 #bba7c0b1 #232751ab; /* top-right-bottom-left (inverted) */
 }
 
-.form-container textarea:focus {
-  outline: none;
-}
-
-.form-container button {
-  background-color: #e50000; /* Red from your logo */
-  width: 10%;
-  color: white;
-  border: none;
-  font-size: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.form-container button:hover {
-  background-color: #c00000;
-}
-
-.form-container input::placeholder {
+/* ... (Your placeholder and focus styles are perfect) ... */
+.input-wrapper input::placeholder {
   color: #48ff9a;
   opacity: 1;
 }
-
-/* --- You can keep the :focus rule, just change it to target input --- */
-.form-container input:focus {
+.input-wrapper input:focus {
   outline: none;
-  border-color: #e50000;
+  box-shadow: 0 0 0 2px #e50000;
+}
+
+/* This targets the button */
+.input-wrapper button {
+  /* --- THIS IS HOW YOU CONTROL THE BUTTON WIDTH --- */
+  /* '100%' makes the button the same width as the input box above it.
+     If you want it smaller, you can use a pixel value like '150px'. */
+  width: 100%;
+  max-width: 75px;
+
+  background-color: #e50000;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px 0; /* Added vertical padding */
+}
+
+.input-wrapper button:hover {
+  background-color: #c00000;
+}
+
+.thank-you-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1px;
+  color: #c00000;
 }
 
 /* src/pages/HomePage.css */
 
-/* --- ADD THESE NEW STYLES AT THE BOTTOM --- */
+/* ... (keep all your other CSS rules the same) ... */
 
-/* Styling for the success message container */
-.thank-you-message {
-  text-align: center;
-  font-family: Helvetica, sans-serif;
-  color: #e43333;
-  margin-top: 20px;
+@keyframes popUp {
+  from {
+    transform: translate(
+      -50%,
+      100%
+    ); /* Start centered horizontally, but below the screen */
+    opacity: 0;
+  }
+  to {
+    transform: translate(
+      -50%,
+      0
+    ); /* End centered horizontally, at its final bottom position */
+    opacity: 1;
+  }
 }
 
-.thank-you-message h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+/* 2. Style the popup image itself */
+.brandt-popup {
+  position: fixed;
+
+  /* --- THIS IS THE KEY CENTERING FIX --- */
+  left: 50%; /* Position the LEFT edge of the image at the screen's center */
+  transform: translateX(
+    -50%
+  ); /* Pull the image back to the left by half its OWN width */
+
+  bottom: 0px; /* Stick it to the bottom */
+
+  /* --- THIS IS THE RESPONSIVE SIZING FIX --- */
+  width: 400px; /* This is the MAXIMUM size on large desktops */
+  max-width: 50vw; /* On smaller screens, it will be 50% of the viewport width */
+
+  height: auto;
+  z-index: 1001;
+
+  /* 3. Apply the animation */
+  animation-name: popUp;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
-.thank-you-message p {
-  font-size: 1.2rem;
-}
+/* --- A CLEANER MEDIA QUERY for the form --- */
+@media (max-width: 768px) {
+  .input-wrapper input {
+    width: 90vw; /* Make the input take up 90% of the viewport width */
+    font-size: 1rem;
+  }
 
-/* Styling for the error message */
-.error-message {
-  color: #b91c1c; /* Use your theme's red color */
-  text-align: center;
-  margin-top: 10px;
-  font-family: "Courier New", Courier, monospace;
+  .input-wrapper button {
+    width: 90vw; /* Make the button match */
+  }
 }

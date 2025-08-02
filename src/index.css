@@ -4,10 +4,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 
   /* --- MOVE THE DEFAULT CURSOR HERE --- */
   cursor: url("/gitar.png"), auto;
+  color: white;
 }
 
 /* 
@@ -25,7 +26,7 @@ body::before {
 
   /* Make sure this path is correct relative to your public folder if it lives there,
      or import it if it's in src/assets */
-  background-image: url("/src/assets/aboutBG.jpg");
+  background-image: url("/src/assets/landingPageBG5.jpg");
   background-size: cover;
   background-position: 46% 0%;
   background-repeat: no-repeat;
@@ -38,3 +39,7 @@ button:hover {
   /* Set the cursor for interactive elements on hover */
   cursor: url("/guitar-_link-select_.png") 11 13, pointer;
 }
+
+/* body.home-page-body-class::before {
+  background-image: url("/src/assets/aboutBG.jpg");
+} */

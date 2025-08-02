@@ -1,61 +1,74 @@
-/* src/pages/ContactPage.css */
+/* src/pages/ContactPage.css - Final Responsive Image Version */
 
 .email-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
-  padding: 20px 20px;
+  min-height: 80vh; /* Increased slightly for better spacing */
+  padding: 0px 20px;
 }
 
-/* --- The Main Button Styling --- */
+.contact-image-wrapper {
+  /* 1. Make the wrapper fluid and responsive */
+  width: 100%;
+
+  /* 2. Set the maximum size for desktop. This is your desired 800px. */
+  max-width: 600px;
+
+  /* This forces a consistent shape, which solves the image/GIF size difference */
+
+  margin-bottom: 40px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #232751ab #bba7c0b1 #bba7c0b1 #232751ab;
+}
+
+/* --- 2. The Image/GIF Itself --- */
+/* This forces the image/GIF to fill the wrapper */
+.contact-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- 3. The Button and Prompt (no major changes) --- */
 .email-button {
   font-family: Helvetica, sans-serif;
-  font-size: 1.5rem; /* Make the email a bit bigger */
+  font-size: 1rem;
   font-weight: bold;
-
-  /* Default state (matches your old design) */
   background-color: transparent;
   color: rgb(255, 255, 255);
   border: 2px solid rgb(255, 255, 255);
-
-  /* General button styles */
   border-radius: 200px;
   padding: 15px 30px;
-  cursor: pointer; /* Change cursor to a pointer on hover */
-
-  /* --- The key to the smooth hover effect --- */
+  cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- The Hover State --- */
 .email-button:hover {
-  background-color: rgb(255, 255, 255); /* Red background */
-  color: rgb(0, 0, 0); /* White text */
+  background-color: rgb(255, 255, 255);
+  color: rgb(103, 118, 180);
+  border: 2px solid rgb(255, 255, 255); /* Keep border consistent */
 }
 
-/* --- The small text that appears below --- */
 .copy-prompt {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   color: #ffffff;
   margin-top: 15px;
-
-  /* This prevents the layout from shifting when the text appears */
   height: 20px;
-
-  /* --- The key to the fade-in effect --- */
-  opacity: 0; /* Hidden by default */
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-/* This class is added by React to make the text visible */
 .copy-prompt.visible {
-  opacity: 1; /* Fades in */
+  opacity: 1;
 }
 
-/* Responsive styles for mobile */
+/* --- 4. The Mobile Styles --- */
+
 @media (max-width: 600px) {
   .email-button {
     font-size: 1rem;

@@ -2,22 +2,28 @@
 
 import React, { useState } from "react";
 import "./ContactPage.css";
-import useBodyClass from "../hooks/useBodyClass";
+
+import contactPhoto from "../assets/aboutBG.jpg";
+import contactVideo from "../assets/philip.mp4";
 
 export const ContactPage = () => {
-  // State to track if the mouse is over the button
-  const [isHovered, setIsHovered] = useState(false);
-  // State to manage the text in the prompt below the button
   const [copyPrompt, setCopyPrompt] = useState("Click to copy to clipboard");
+  const [showVideo, setShowVideo] = useState(false);
 
-  // This function runs when the button is clicked
+  // --- NEW STATE for prompt visibility ---
+  const [isPromptVisible, setIsPromptVisible] = useState(false);
+
   const handleCopyClick = async () => {
-    const email = "motobanditboys@gmail.com";
+    if (showVideo) return;
+
+    const email = "motoband-itboys@gmail.com";
     try {
-      // Use the modern Navigator API to copy text to the clipboard
       await navigator.clipboard.writeText(email);
-      // Give the user feedback that it worked
       setCopyPrompt("Copied!");
+      setShowVideo(true);
+
+      // --- ALSO MAKE THE PROMPT PERMANENTLY VISIBLE ---
+      setIsPromptVisible(true);
     } catch (err) {
       console.error("Failed to copy text: ", err);
       setCopyPrompt("Failed to copy!");
@@ -33,21 +39,42 @@ export const ContactPage = () => {
       />
 
       <div className="email-container">
+        <div className="contact-image-wrapper">
+          {/* 2. Conditionally render either the img or the video */}
+          {!showVideo ? (
+            <img
+              src={contactPhoto}
+              alt="Contact visual"
+              className="contact-image"
+            />
+          ) : (
+            <video
+              src={contactVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="contact-image" // Use the same class for styling
+            ></video>
+          )}
+        </div>
         <button
           className="email-button"
           onClick={handleCopyClick}
-          onMouseEnter={() => setIsHovered(true)}
+          // The prompt is now visible on hover
+          onMouseEnter={() => setIsPromptVisible(true)}
+          // The prompt is hidden on mouse leave ONLY if the form hasn't been submitted
           onMouseLeave={() => {
-            setIsHovered(false);
-            // Reset the prompt text when the mouse leaves
-            setTimeout(() => setCopyPrompt("Click to copy to clipboard"), 300);
+            if (!showGif) {
+              setIsPromptVisible(false);
+            }
           }}
         >
           motobanditboys@gmail.com
         </button>
 
-        {/* The small text that fades in/out */}
-        <p className={`copy-prompt ${isHovered ? "visible" : ""}`}>
+        {/* The prompt's visibility is now controlled by the new state */}
+        <p className={`copy-prompt ${isPromptVisible ? "visible" : ""}`}>
           {copyPrompt}
         </p>
       </div>

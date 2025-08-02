@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import './index.css';
+import "./index.css";
 
-import Layout from './Layout.jsx';
-import HomePage from './pages/HomePage.jsx';
-import ShopPage from './pages/shopPage.jsx';
-import { ContactPage } from './pages/ContactPage.jsx';
-import { UnlockSongPage } from './pages/UnlockSongPage.jsx';
-import { VideoPage } from './pages/VideoPage.jsx';
-import { MusicPage } from './pages/MusicPage.jsx';
-import { AboutPage } from './pages/AboutPage.jsx';
+import Layout from "./Layout.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import ShopPage from "./pages/shopPage.jsx";
+import { ContactPage } from "./pages/ContactPage.jsx";
+import { UnlockSongPage } from "./pages/UnlockSongPage.jsx";
+import { MusicPage } from "./pages/MusicPage.jsx";
+import { AboutPage } from "./pages/AboutPage.jsx";
+import VideoPage from "./pages/VideoPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,28 +28,28 @@ const router = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <ContactPage/>
+        element: <ContactPage />,
       },
       {
         path: "videos",
-        element: <VideoPage/>
+        element: <VideoPage />,
       },
-      { 
-        path: "about", 
-        element: <AboutPage/> 
+      {
+        path: "about",
+        element: <AboutPage />,
       },
       {
         path: "unlock",
-        element: <UnlockSongPage/>
+        element: <UnlockSongPage />,
       },
       {
         path: "music",
-        element: <MusicPage/>
-      }
+        element: <MusicPage />,
+      },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
