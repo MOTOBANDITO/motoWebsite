@@ -27,6 +27,40 @@
   border-color: #232751ab #bba7c0b1 #bba7c0b1 #232751ab; /* top-right-bottom-left (inverted) */
 }
 
+/* Video title overlay styles */
+.video-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.video-title-text {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 10px;
+  line-height: 1.2;
+  max-width: 90%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* --- THE NEW ANIMATED SIDE GRAPHICS --- */
 .side-graphic {
   position: fixed;

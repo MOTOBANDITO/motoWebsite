@@ -64,6 +64,7 @@ function Layout() {
           {/* <Link to="/about">about</Link> */}
           {/* <Link to="/unlock">[unlock song]</Link> */}
           <Link to="/contact">contact</Link>
+          {/* <Link to="/wall">bathroom wall</Link> */}
         </nav>
       </header>
 

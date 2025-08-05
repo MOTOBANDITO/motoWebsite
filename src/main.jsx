@@ -12,6 +12,7 @@ import { UnlockSongPage } from "./pages/UnlockSongPage.jsx";
 import { MusicPage } from "./pages/MusicPage.jsx";
 import { AboutPage } from "./pages/AboutPage.jsx";
 import VideoPage from "./pages/VideoPage.jsx";
+import { WallPage } from "./pages/WallPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "music",
         element: <MusicPage />,
-      },
+      }
     ],
   },
 ]);

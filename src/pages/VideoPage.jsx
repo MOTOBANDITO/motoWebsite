@@ -7,16 +7,26 @@ import sideGraphic from "../assets/philip_cutout2.png";
 // The YouTubePlayer component (no changes needed here)
 const YouTubePlayer = ({ videoId, title }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const handlePlay = () => setIsPlaying(true);
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 
   return (
-    <div className="video-wrapper">
+    <div 
+      className="video-wrapper"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {!isPlaying ? (
         <div className="video-thumbnail-container" onClick={handlePlay}>
           <img src={thumbnailUrl} alt={title} className="video-thumbnail" />
           <div className="custom-play-button"></div>
+          {isHovered && (
+            <div className="video-title-overlay">
+              <span className="video-title-text">{title}</span>
+            </div>
+          )}
         </div>
       ) : (
         <iframe
@@ -74,6 +84,7 @@ function VideoPage() {
 
       {/* Your list of videos (no changes needed here) */}
       <YouTubePlayer videoId="XR6BNYPyJKI" title="KEANU: WEAPONIZED" />
+      <YouTubePlayer videoId="_7vAbUmaJmM" title="OBSERVATIONS 1 - LYRIC" />
       <YouTubePlayer videoId="MUCQ69j21xk" title="WINONA" />
       <YouTubePlayer videoId="OUZ8463H2_g" title="DAYLIGHT DOOM - LYRIC" />
       <YouTubePlayer
