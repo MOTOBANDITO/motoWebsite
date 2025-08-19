@@ -7,7 +7,9 @@ import contactPhoto from "../assets/aboutBG.jpg";
 import contactVideo from "../assets/philip.mp4";
 
 export const ContactPage = () => {
-  const [copyPrompt, setCopyPrompt] = useState("Click to copy to clipboard");
+  const [copyPrompt, setCopyPrompt] = useState(
+    "Click to copy to clipboard and see Philip."
+  );
   const [showVideo, setShowVideo] = useState(false);
 
   // --- NEW STATE for prompt visibility ---
