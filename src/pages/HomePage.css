@@ -139,6 +139,184 @@
   animation-fill-mode: forwards;
 }
 
+/* --- Discount Code Popup Styles --- */
+.discount-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.discount-popup-content {
+  position: relative;
+  background-color: #1b1d37;
+  border: 2px solid;
+  border-color: #232751ab #bba7c0b1 #bba7c0b1 #232751ab;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  animation: slideUp 0.4s ease-out;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.discount-popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.discount-popup-close:hover {
+  color: #e50000;
+}
+
+.discount-popup-title {
+  font-family: Helvetica, sans-serif;
+  font-size: 2rem;
+  color: #94c2d9;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+}
+
+.discount-popup-message {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+}
+
+.discount-code-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.discount-code {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #48ff9a;
+  background-color: #00000068;
+  padding: 15px 25px;
+  border: 2px solid #48ff9a;
+  letter-spacing: 2px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.discount-copy-button {
+  font-family: Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #e50000;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.discount-copy-button:hover {
+  background-color: #c00000;
+}
+
+.discount-copy-button:active {
+  transform: scale(0.98);
+}
+
+.discount-popup-footer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 20px 0 0 0;
+}
+
+.discount-shop-link {
+  color: #48ff9a;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.discount-shop-link:hover {
+  color: #ffffff;
+}
+
+/* --- Responsive Styles for Discount Popup --- */
+@media (max-width: 768px) {
+  .discount-popup-content {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .discount-popup-title {
+    font-size: 1.5rem;
+  }
+
+  .discount-popup-message {
+    font-size: 1rem;
+  }
+
+  .discount-code {
+    font-size: 1.4rem;
+    padding: 12px 20px;
+    min-width: 150px;
+  }
+
+  .discount-copy-button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  .discount-code-container {
+    flex-direction: column;
+  }
+}
+
 /* --- A CLEANER MEDIA QUERY for the form --- */
 @media (max-width: 768px) {
   .input-wrapper input {

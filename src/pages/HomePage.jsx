@@ -8,8 +8,13 @@ import "./HomePage.css";
 
 function HomePage() {
   const [status, setStatus] = useState("");
+  const [showDiscountPopup, setShowDiscountPopup] = useState(false);
+  const [discountCopied, setDiscountCopied] = useState(false);
   const FORM_ENDPOINT = "https://formspree.io/f/xblkobjd";
   // const FORM_ENDPOINT = "https://formspree.io/f/asdasdad";
+  
+  // Change this to your actual discount code
+  const DISCOUNT_CODE = "HOFFMAN";
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,12 +33,28 @@ function HomePage() {
       if (response.ok) {
         setStatus("success");
         event.target.reset();
+        // Show discount popup after successful submission
+        setShowDiscountPopup(true);
       } else {
         setStatus("error");
       }
     } catch (error) {
       setStatus("error");
     }
+  };
+
+  const handleCopyDiscount = async () => {
+    try {
+      await navigator.clipboard.writeText(DISCOUNT_CODE);
+      setDiscountCopied(true);
+      setTimeout(() => setDiscountCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy discount code: ", err);
+    }
+  };
+
+  const handleClosePopup = () => {
+    setShowDiscountPopup(false);
   };
 
   // If the form was submitted successfully, show a thank you message AND the image.
@@ -56,6 +77,32 @@ function HomePage() {
           {/* --- 2. ADD THE POPUP IMAGE HERE --- */}
           <img src={brandtImage} alt="Brandt" className="brandt-popup" />
         </div>
+        {/* Discount Code Popup */}
+        {showDiscountPopup && (
+          <div className="discount-popup-overlay" onClick={handleClosePopup}>
+            <div className="discount-popup-content" onClick={(e) => e.stopPropagation()}>
+              <button className="discount-popup-close" onClick={handleClosePopup}>
+                ×
+              </button>
+              <h2 className="discount-popup-title">15% OFF</h2>
+              <p className="discount-popup-message">
+                Wow, fun! You can use this code at checkout:
+              </p>
+              <div className="discount-code-container">
+                <span className="discount-code">{DISCOUNT_CODE}</span>
+                <button 
+                  className="discount-copy-button"
+                  onClick={handleCopyDiscount}
+                >
+                  {discountCopied ? "Copied!" : "Copy"}
+                </button>
+              </div>
+              <p className="discount-popup-footer">
+                Visit our <a href="/shop" className="discount-shop-link">shop</a> to use this code
+              </p>
+            </div>
+          </div>
+        )}
       </>
     );
   }
