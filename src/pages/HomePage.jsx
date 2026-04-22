@@ -1,20 +1,107 @@
 // src/pages/HomePage.jsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import motoLogo from "../assets/motologoRedBlur.webp";
 import brandtImage from "../assets/brandt.png"; // <-- 1. Import the new image
 import "./HomePage.css";
+import { ga4Event } from "../analytics.js";
 // I've removed the unused useBodyClass import to keep things clean.
+
+const DAYLIGHT_DOOM_VIDEO_ID = "8wyPRI9XIFM";
+
+const DAYLIGHT_DOOM_YOUTUBE_URL = (() => {
+  const u = new URL("https://www.youtube.com/watch");
+  u.searchParams.set("v", DAYLIGHT_DOOM_VIDEO_ID);
+  u.searchParams.set("utm_source", "motobandit.net");
+  u.searchParams.set("utm_medium", "homepage_modal");
+  u.searchParams.set("utm_campaign", "daylight_doom_video");
+  return u.toString();
+})();
+
+const DAYLIGHT_DOOM_THUMB = `https://img.youtube.com/vi/${DAYLIGHT_DOOM_VIDEO_ID}/maxresdefault.jpg`;
+const DAYLIGHT_PROMO_DISMISSED_KEY = "motobandit_daylightDoomPromoDismissed";
 
 function HomePage() {
   const [status, setStatus] = useState("");
   const [showDiscountPopup, setShowDiscountPopup] = useState(false);
   const [discountCopied, setDiscountCopied] = useState(false);
+  const [showDaylightPromo, setShowDaylightPromo] = useState(() => {
+    if (typeof sessionStorage === "undefined") return false;
+    return !sessionStorage.getItem(DAYLIGHT_PROMO_DISMISSED_KEY);
+  });
   const FORM_ENDPOINT = "https://formspree.io/f/xblkobjd";
   // const FORM_ENDPOINT = "https://formspree.io/f/asdasdad";
   
   // Change this to your actual discount code
   const DISCOUNT_CODE = "HOFFMAN";
+
+  const dismissDaylightPromo = useCallback(() => {
+    sessionStorage.setItem(DAYLIGHT_PROMO_DISMISSED_KEY, "1");
+    setShowDaylightPromo(false);
+  }, []);
+
+  useEffect(() => {
+    if (!showDaylightPromo) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") dismissDaylightPromo();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [showDaylightPromo, dismissDaylightPromo]);
+
+  const daylightPromoModal =
+    showDaylightPromo && (
+      <div
+        className="daylight-promo-overlay"
+        onClick={dismissDaylightPromo}
+        role="presentation"
+      >
+        <div
+          className="daylight-promo-panel"
+          onClick={(e) => e.stopPropagation()}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="daylight-promo-heading"
+        >
+          <button
+            type="button"
+            className="daylight-promo-close"
+            onClick={dismissDaylightPromo}
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <img
+            src={DAYLIGHT_DOOM_THUMB}
+            alt=""
+            className="daylight-promo-thumb"
+          />
+          <p id="daylight-promo-heading" className="daylight-promo-heading">
+            DAYLIGHT DOOM VIDEO OUT NOW!
+          </p>
+          <a
+            href={DAYLIGHT_DOOM_YOUTUBE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="daylight-promo-watch"
+            onClick={() => {
+              ga4Event("daylight_doom_promo_watch", {
+                video_id: DAYLIGHT_DOOM_VIDEO_ID,
+                link_url: DAYLIGHT_DOOM_YOUTUBE_URL,
+              });
+              dismissDaylightPromo();
+            }}
+          >
+            Watch now
+          </a>
+        </div>
+      </div>
+    );
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -33,6 +120,7 @@ function HomePage() {
       if (response.ok) {
         setStatus("success");
         event.target.reset();
+        dismissDaylightPromo();
         // Show discount popup after successful submission
         setShowDiscountPopup(true);
       } else {
@@ -77,6 +165,7 @@ function HomePage() {
           {/* --- 2. ADD THE POPUP IMAGE HERE --- */}
           <img src={brandtImage} alt="Brandt" className="brandt-popup" />
         </div>
+        {daylightPromoModal}
         {/* Discount Code Popup */}
         {showDiscountPopup && (
           <div className="discount-popup-overlay" onClick={handleClosePopup}>
@@ -137,6 +226,7 @@ function HomePage() {
           </form>
         </div>
       </div>
+      {daylightPromoModal}
     </>
   );
 }

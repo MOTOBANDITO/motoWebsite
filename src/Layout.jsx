@@ -1,13 +1,23 @@
 // src/Layout.jsx
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // --- 1. Import useLocation from react-router-dom ---
 import { Outlet, Link, useLocation } from "react-router-dom";
 import "./App.css";
+import { ga4PageView } from "./analytics.js";
 
 function Layout() {
   // --- 2. Get the current location object ---
   const location = useLocation();
+  const isFirstRoute = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRoute.current) {
+      isFirstRoute.current = false;
+      return;
+    }
+    ga4PageView();
+  }, [location.pathname]);
 
   // State to manage navbar visibility
   const [isNavVisible, setIsNavVisible] = useState(true);
