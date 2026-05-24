@@ -8,7 +8,7 @@ import contactVideo from "../assets/philip.mp4";
 
 export const ContactPage = () => {
   const [copyPrompt, setCopyPrompt] = useState(
-    "Click to copy to clipboard and see Philip."
+    "Click to copy to clipboard and see Philip.",
   );
   const [showVideo, setShowVideo] = useState(false);
 
@@ -18,7 +18,7 @@ export const ContactPage = () => {
   const handleCopyClick = async () => {
     if (showVideo) return;
 
-    const email = "motoband-itboys@gmail.com";
+    const email = "motobanditboys@gmail.com";
     try {
       await navigator.clipboard.writeText(email);
       setCopyPrompt("Copied!");
