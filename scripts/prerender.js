@@ -35,7 +35,7 @@ const routes = [
   {
     path: "/shop",
     title: "Shop | MOTO BANDIT",
-    description: "Official MOTO BANDIT merch, shipped direct.",
+    description: "Official MOTO BANDIT merch: T-shirts, hoodies and stickers from the Cincinnati punk soul band.",
   },
   {
     path: "/about",
