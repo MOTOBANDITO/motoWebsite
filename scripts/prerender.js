@@ -25,7 +25,7 @@ const routes = [
     path: "/music",
     title: "Music | MOTO BANDIT",
     description:
-      "Stream or buy every MOTO BANDIT release, including TWIN FLAME and PILE OF GARBAGE, on Spotify and Bandcamp.",
+      "Stream or buy every MOTO BANDIT release, including DAYLIGHT DOOM and OBSERVATIONS 1, on Spotify and Bandcamp.",
   },
   {
     path: "/videos",
