@@ -11,7 +11,6 @@ export default defineConfig({
       hostname: "https://motobandit.net",
       // This explicitly tells the plugin about all the pages on your site.
       dynamicRoutes: [
-        "/", // Your homepage
         "/shop", // Your shop page
         "/music", // Your music page
         "/videos", // Your videos page
