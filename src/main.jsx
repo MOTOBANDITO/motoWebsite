@@ -6,7 +6,7 @@ import "./index.css";
 
 import Layout from "./Layout.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import ShopPage from "./pages/shopPage.jsx";
+import ShopPage from "./pages/ShopPage.jsx";
 import { ContactPage } from "./pages/ContactPage.jsx";
 import { UnlockSongPage } from "./pages/UnlockSongPage.jsx";
 import { MusicPage } from "./pages/MusicPage.jsx";
